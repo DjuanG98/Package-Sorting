@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5D3696"
+        android:theme="@style/Theme.PackageSorting.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#5D3696"
+            android:elevation="0dp"
+            android:theme="@style/Theme.PackageSorting"
+            app:navigationIcon="@drawable/ic_poly_logo"
+            app:popupTheme="@style/Theme.PackageSorting.PopupOverlay" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_TD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time/Date"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Shipper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shipper"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#0AFFFFFF"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="6dp"
+            app:boxCornerRadiusBottomStart="6dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="1dp"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:startIconDrawable="@drawable/ic_search_white_18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Barcode"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_Info"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:onClick="save"
+            android:text="Save"
+            android:textColor="@color/black"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

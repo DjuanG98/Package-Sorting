@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599878323606",
+    "project_id": "packagesorting",
+    "storage_bucket": "packagesorting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599878323606:android:afc0571eb3fc468f95e1b7",
+        "android_client_info": {
+          "package_name": "com.maddtech.packagesorting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599878323606-50hul3vpc6o1581m6v629rtj1iriqm5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJT3Ts5LUOHvJ3XZIYdzKAq_5xBaAFW18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599878323606-50hul3vpc6o1581m6v629rtj1iriqm5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
