@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity{
     private RecyclerView recyclerView;
     PackageDetailsAdapter adapter; // Create Object of the Adapter class
     DatabaseReference mbase;
+    AppBarLayout appBarLayout;
 
     private Toolbar toolbar;
 
@@ -43,8 +45,10 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        appBarLayout = findViewById(R.id.appBarLayout);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        appBarLayout.setOutlineProvider(null);
         mbase = FirebaseDatabase.getInstance().getReference();
         recyclerView = findViewById(R.id.display_Data);
         Context context = getApplicationContext();
