@@ -55,13 +55,15 @@ public class InfoActivity extends AppCompatActivity {
 
         private String Name;
         private String Tracking_ID;
+        private String Location;
 
         public Entry(){
         }
 
-        public Entry(String Name, String Tracking_ID){
+        public Entry(String Name, String Tracking_ID, String Location){
             this.Name=Name;
             this.Tracking_ID=Tracking_ID;
+            this.Location=Location;
         }
         public String getName(){
             return Name;
@@ -75,6 +77,12 @@ public class InfoActivity extends AppCompatActivity {
         public void setTracking(String Tracking_ID){
             this.Tracking_ID = Tracking_ID;
         }
+        public String getLocation(){
+            return Location;
+        }
+        public void setLocation(String Location){
+            this.Location = Location;
+        }
     }
 
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -82,8 +90,9 @@ public class InfoActivity extends AppCompatActivity {
     public void save(View view){
         String Barcode = barcode.getText().toString();
         String Name = name.getText().toString();
-        Entry entry = new Entry(Name,Barcode);
-        mDbRef = database.getReference().child("Student");
+        String Location = location.getText().toString();
+        Entry entry = new Entry(Name,Barcode,Location);
+        mDbRef = database.getReference().child("Student").child(Name);
         mDbRef.setValue(entry);
     }
 

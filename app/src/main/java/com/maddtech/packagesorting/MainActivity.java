@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         appBarLayout.setOutlineProvider(null);
-        mbase = FirebaseDatabase.getInstance().getReference();
+        mbase = FirebaseDatabase.getInstance().getReference("Student");
         recyclerView = findViewById(R.id.display_Data);
         Context context = getApplicationContext();
         recyclerView.setLayoutManager(

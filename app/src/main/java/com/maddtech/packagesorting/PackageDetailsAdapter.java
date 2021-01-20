@@ -50,9 +50,9 @@ public class PackageDetailsAdapter extends FirebaseRecyclerAdapter<
         {
             super(itemView);
 
-            name = itemView.findViewById(R.id.firstname);
-            tracking = itemView.findViewById(R.id.lastname);
-            location = itemView.findViewById(R.id.age);
+            name = itemView.findViewById(R.id.name);
+            tracking = itemView.findViewById(R.id.tracking);
+            location = itemView.findViewById(R.id.location);
         }
     }
 }
