@@ -16,6 +16,11 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class InfoActivity extends AppCompatActivity {
 
     EditText barcode, name, email, location, td, shipper;
@@ -38,8 +43,21 @@ public class InfoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String barcode1 = intent.getStringExtra("Barcode");
         String text1 = intent.getStringExtra("Text");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy_hh:mm a", Locale.getDefault());
+        String currentDateandTime = sdf.format(new Date());
 
         barcode.setText(barcode1);
+        td.setText(currentDateandTime);
+
+        String Amazon = barcode.getText().toString();
+        if (Amazon.startsWith("TBA") || Amazon.startsWith("TBC") || Amazon.startsWith("TBM")){
+            shipper.setText("Amazon");
+        }
+
+        String UPS = barcode.getText().toString();
+        if (UPS.startsWith("1Z")){
+            shipper.setText("UPS");
+        }
 
         final GestureDetector gestureDetector = new GestureDetector(InfoActivity.this,new GestureDetector.SimpleOnGestureListener() {
             public boolean onDoubleTap(MotionEvent e) {
@@ -54,22 +72,34 @@ public class InfoActivity extends AppCompatActivity {
     public class Entry{
 
         private String Name;
+        private String Email;
         private String Tracking_ID;
         private String Location;
+        private String Shipper;
+        private String TD;
 
         public Entry(){
         }
 
-        public Entry(String Name, String Tracking_ID, String Location){
+        public Entry(String Name, String Email, String Tracking_ID, String Location, String Shipper, String TD){
             this.Name=Name;
+            this.Email=Email;
             this.Tracking_ID=Tracking_ID;
             this.Location=Location;
+            this.Shipper=Shipper;
+            this.TD=TD;
         }
         public String getName(){
             return Name;
         }
         public void setName(String Name){
             this.Name = Name;
+        }
+        public String getEmail(){
+            return Email;
+        }
+        public void setEmail(String Email){
+            this.Email = Email;
         }
         public String getTracking(){
             return Tracking_ID;
@@ -83,6 +113,18 @@ public class InfoActivity extends AppCompatActivity {
         public void setLocation(String Location){
             this.Location = Location;
         }
+        public String getShipper(){
+            return Shipper;
+        }
+        public void setShipper(String Shipper){
+            this.Shipper = Shipper;
+        }
+        public String getTD(){
+            return TD;
+        }
+        public void setTD(String TD){
+            this.TD = TD;
+        }
     }
 
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -90,8 +132,11 @@ public class InfoActivity extends AppCompatActivity {
     public void save(View view){
         String Barcode = barcode.getText().toString();
         String Name = name.getText().toString();
+        String Email = email.getText().toString();
         String Location = location.getText().toString();
-        Entry entry = new Entry(Name,Barcode,Location);
+        String Shipper = shipper.getText().toString();
+        String TD = td.getText().toString();
+        Entry entry = new Entry(Name,Email,Barcode,Location,Shipper,TD);
         mDbRef = database.getReference().child("Student").child(Name);
         mDbRef.setValue(entry);
     }
