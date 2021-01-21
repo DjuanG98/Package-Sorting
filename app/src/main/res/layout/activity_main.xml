@@ -40,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#0AFFFFFF"
+            android:textColorHint="@color/white"
             app:boxBackgroundColor="@color/purple_200"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
@@ -47,7 +48,8 @@
             app:boxCornerRadiusTopStart="6dp"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_search_white_18dp"
+            app:startIconTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -64,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#0AFFFFFF"
+            android:textColorHint="@color/white"
             app:boxBackgroundColor="@color/purple_200"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
@@ -71,7 +74,8 @@
             app:boxCornerRadiusTopStart="6dp"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
-            app:startIconDrawable="@drawable/ic_place_white_18dp">
+            app:startIconDrawable="@drawable/ic_place_white_18dp"
+            app:startIconTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

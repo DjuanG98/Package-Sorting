@@ -43,6 +43,7 @@
             android:background="#0AFFFFFF"
             android:textColorHint="@color/black"
             app:boxCornerRadiusBottomEnd="6dp"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusBottomStart="6dp"
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
@@ -50,7 +51,7 @@
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_person_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Name"
@@ -66,9 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="#0AFFFFFF"
             android:textColorHint="@color/black"
             app:boxBackgroundColor="@color/white"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
             app:boxCornerRadiusTopEnd="6dp"
@@ -76,7 +77,7 @@
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_email_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Email"
@@ -95,6 +96,7 @@
             android:background="#0AFFFFFF"
             android:textColorHint="@color/black"
             app:boxBackgroundColor="@color/white"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
             app:boxCornerRadiusTopEnd="6dp"
@@ -102,7 +104,7 @@
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_room_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Location"
@@ -122,13 +124,14 @@
             android:textColorHint="@color/black"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="6dp"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusBottomStart="6dp"
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_today_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_TD"
@@ -149,13 +152,14 @@
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_local_shipping_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Shipper"
@@ -176,13 +180,14 @@
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="6dp"
             app:boxCornerRadiusBottomStart="6dp"
+            app:startIconTint="@color/black"
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
-            app:startIconDrawable="@drawable/ic_search_white_18dp">
+            app:startIconDrawable="@drawable/ic_qr_code_black_18dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Barcode"
