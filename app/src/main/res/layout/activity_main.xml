@@ -80,7 +80,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Location..."
+                android:hint="@string/locationSearch"
                 android:textColor="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -107,14 +107,16 @@
             android:clickable="true"
             android:elevation="6dp"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:focusable="true">
 
             <TextView
+                android:id="@+id/recycleCount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="0 items(s)"
+                android:text="@string/_0_items_s"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@color/black" />
 
@@ -125,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:onClick="scan_Barcode"
-                android:text="Scan"
+                android:text="@string/scan"
                 android:textColor="@color/black"
                 app:backgroundTint="@android:color/white"
                 app:icon="@drawable/baseline_scanner_black_18dp"

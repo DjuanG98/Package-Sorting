@@ -3,27 +3,38 @@ package com.maddtech.packagesorting;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class InfoActivity extends AppCompatActivity {
 
-    EditText barcode, name, email, location, td, shipper;
+    EditText barcode, name, email, td;
+    AutoCompleteTextView location, shipper;
+    TextInputLayout locationDropDown, shipperDropDown;
+    ArrayList<String> arrayList_location, arrayList_shipper;
+    ArrayAdapter<String> arrayAdapter_location, arrayAdapter_shipper;
     EditText et;
     DatabaseReference mDbRef;
 
@@ -33,11 +44,10 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         barcode = findViewById(R.id.et_Barcode);
         name = findViewById(R.id.et_Name);
         email = findViewById(R.id.et_Email);
-        location = findViewById(R.id.et_Location);
         td = findViewById(R.id.et_TD);
         shipper = findViewById(R.id.et_Shipper);
         Intent intent = getIntent();
@@ -45,6 +55,7 @@ public class InfoActivity extends AppCompatActivity {
         String text1 = intent.getStringExtra("Text");
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy_hh:mm a", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
+
 
         barcode.setText(barcode1);
         td.setText(currentDateandTime);
@@ -66,6 +77,29 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+        //Location Dropdown Menu
+        location = (AutoCompleteTextView) findViewById(R.id.et_Location);
+        locationDropDown = (TextInputLayout) findViewById(R.id.locationDropdown);
+        arrayList_location = new ArrayList<>();
+        arrayList_location.add("Back");
+        arrayList_location.add("Floor");
+        arrayList_location.add("Refrigerator");
+        arrayList_location.add("Tub");
+
+        arrayAdapter_location = new ArrayAdapter<>(getApplicationContext(),R.layout.location_item,arrayList_location);
+        location.setAdapter(arrayAdapter_location);
+
+        //Shipper Dropdown Menu
+        shipper = (AutoCompleteTextView) findViewById(R.id.et_Shipper);
+        shipperDropDown = (TextInputLayout) findViewById(R.id.shipperDropdown);
+        arrayList_shipper = new ArrayList<>();
+        arrayList_shipper.add("Amazon");
+        arrayList_shipper.add("Fedex");
+        arrayList_shipper.add("UPS");
+        arrayList_shipper.add("USPS");
+
+        arrayAdapter_shipper = new ArrayAdapter<>(getApplicationContext(),R.layout.shipper_item,arrayList_shipper);
+        shipper.setAdapter(arrayAdapter_shipper);
 
     }
 
@@ -143,6 +177,7 @@ public class InfoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -154,6 +189,7 @@ public class InfoActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

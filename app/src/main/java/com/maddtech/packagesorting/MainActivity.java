@@ -6,22 +6,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -32,13 +39,13 @@ public class MainActivity extends AppCompatActivity{
     BottomSheetBehavior sheetBehavior;
     CoordinatorLayout coordinatorLayout;
     Button scanB,filterB;
+    TextView recycleCount;
     private RecyclerView recyclerView;
     PackageDetailsAdapter adapter; // Create Object of the Adapter class
     DatabaseReference mbase;
     AppBarLayout appBarLayout;
 
     private Toolbar toolbar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +58,7 @@ public class MainActivity extends AppCompatActivity{
         appBarLayout.setOutlineProvider(null);
         mbase = FirebaseDatabase.getInstance().getReference("Student");
         recyclerView = findViewById(R.id.display_Data);
+        recycleCount = findViewById(R.id.recycleCount);
         Context context = getApplicationContext();
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(this));
@@ -74,7 +82,29 @@ public class MainActivity extends AppCompatActivity{
         adapter = new PackageDetailsAdapter(options);
         // Connecting Adapter class with the Recycler view*/
         recyclerView.setAdapter(adapter);
+
+        DatabaseReference databaseR = FirebaseDatabase.getInstance().getReference();
+        final int[] childCount = {0};
+
+        databaseR.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap: dataSnapshot.getChildren()) {
+                    childCount[0] +=snap.getChildrenCount();
+                    recycleCount.setText(String.valueOf(childCount[0]) + " Package(s)");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
     }
+
+
 
     @Override protected void onStart()
     {
@@ -145,4 +175,5 @@ public class MainActivity extends AppCompatActivity{
 
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -19,6 +19,8 @@ public class PackageDetailsAdapter extends FirebaseRecyclerAdapter<
         super(options);
     }
 
+
+
     @Override
     protected void onBindViewHolder(@NonNull personsViewholder holder,
                      int position, @NonNull PackageDetails model)
@@ -43,8 +45,7 @@ public class PackageDetailsAdapter extends FirebaseRecyclerAdapter<
         return new PackageDetailsAdapter.personsViewholder(view);
     }
 
-    class personsViewholder
-            extends RecyclerView.ViewHolder {
+    class personsViewholder extends RecyclerView.ViewHolder {
         TextView name, tracking, location;
         public personsViewholder(@NonNull View itemView)
         {
